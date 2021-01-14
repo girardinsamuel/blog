@@ -19,8 +19,14 @@ export default {
   css: [
   ],
 
+  loading: {
+    color: '#00CD81'
+  },
+
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
+    '@/plugins/markdown',
+    '@/plugins/copy'
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
