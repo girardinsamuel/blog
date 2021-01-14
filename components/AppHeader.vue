@@ -19,10 +19,9 @@
           <AppSearch class="hidden lg:block" />
         </div>
         <div
-          class="lg:w-1/5 flex items-center pl-4 lg:pl-8"
-          :class="{ 'justify-between': settings.layout !== 'single', 'justify-end': settings.layout === 'single' }"
+          class="lg:w-1/5 flex items-center pl-4 lg:pl-8 justify-end"
         >
-          <div class="flex items-center">
+          <div class="flex items-center justify-end">
             <a
               href="https://github.com/girardinsamuel"
               target="_blank"

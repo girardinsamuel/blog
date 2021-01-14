@@ -16,3 +16,16 @@ Learn how to fetch your content with `$content`: https://content.nuxtjs.org/fetc
 ## Displaying content
 
 Learn how to display your Markdown content with the `<nuxt-content>` component directly in your template: https://content.nuxtjs.org/displaying.
+
+## code block
+
+```js{1,3-5}[server.js]
+const http = require('http')
+const bodyParser = require('body-parser')
+
+http.createServer((req, res) => {
+  bodyParser.parse(req, (error, body) => {
+    res.end(body)
+  })
+}).listen(3000)
+```
