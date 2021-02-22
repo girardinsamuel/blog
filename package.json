@@ -14,7 +14,7 @@
     "@nuxt/content": "^1.9.0",
     "core-js": "^3.6.5",
     "marked": "^1.2.7",
-    "nuxt": "^2.14.6",
+    "nuxt": "^2.15.1",
     "vue-clipboard2": "^0.3.1"
   },
   "devDependencies": {
