@@ -19,7 +19,7 @@
                   </badge>
                 </div>
               </div>
-              <span class="text-gray-600 font-semibold text-xs">{{ new Date(article.createdAt).toLocaleDateString() }}</span>
+              <span class="text-gray-600 font-semibold text-xs">{{ article.createdAt | formatDate }}</span>
             </div>
             <p class="truncate">
               {{ article.description }}
@@ -38,7 +38,7 @@ export default {
     // fetch latest articles
     const articles = await $content('articles', params.slug)
       .only(['title', 'description', 'slug', 'createdAt', 'tags'])
-      .sortBy('createdAt', 'asc')
+      .sortBy('createdAt', 'desc')
       .fetch()
     return {
       articles

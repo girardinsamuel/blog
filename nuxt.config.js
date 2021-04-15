@@ -20,13 +20,14 @@ export default {
   ],
 
   loading: {
-    color: '#00CD81'
+    color: '#FACC15'
   },
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
     '@/plugins/markdown',
-    '@/plugins/copy'
+    '@/plugins/copy',
+    '@/plugins/filters'
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)

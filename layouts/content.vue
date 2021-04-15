@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-col h-screen font-mono bg-gray-900">
-    <SearchableHeader />
+    <MainHeader :search-mode="true" />
     <main class="container mx-auto px-4 py-20 lg:px-8 flex-grow mt-10">
       <Nuxt />
     </main>

@@ -10,7 +10,7 @@
         </a>
       </div>
       <button
-        class="flex-shrink-0 ml-auto text-yellow-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
+        class="hidden flex-shrink-0 ml-auto text-yellow-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
         @click="toggleMode"
       >
         <svg

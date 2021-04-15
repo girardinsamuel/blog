@@ -5,7 +5,7 @@
     <div
       class="w-full py-4 lg:pt-8 lg:pb-4 border-gray-800"
     >
-      <div class="prose prose-md lg:prose-lg">
+      <div class="prose prose-sm md:prose-md lg:prose-lg">
         <h2 class="font-semibold mb-8">
           Who am I ?
         </h2>
@@ -15,11 +15,14 @@
           </div>
           <div class="flex-1">
             <p>
-              I am a Python 🐍 software engineer working mainly with <a href="https://docs.masoniteproject.com" class="link">MasoniteFramework</a> and <a href="https://docs.djangoproject.com" class="link">Django</a>. I am a huge
+              I am a Python 🐍 software engineer working mainly with <a href="https://docs.masoniteproject.com" class="link">MasoniteFramework</a> and <a href="https://docs.djangoproject.com" class="link">Django</a>. I am also a huge
               fan of Vue.js, Tailwind CSS and Inertia.js. Those are my favorite tools when it come to develop a new project.
             </p>
 
-            <p>I am also a core contributor of MasoniteFramework and its ecosystem.</p>
+            <p>
+              I am also a core contributor of MasoniteFramework and its ecosystem. I started contributing to it one year ago and I am really willing to devote more of
+              my time to it and open sources packages around it.
+            </p>
 
             <p>Outside of programming I am a mountaineer 🏔 / rock climber who enjoy being outside.</p>
           </div>
@@ -71,7 +74,7 @@
           <li><span class="font-semibold">Twitter:</span> <a href="https://twitter.com/girardin_sam" class="link">@girardin_sam</a></li>
         </ul>
 
-        <ContactForm />
+        <!-- <ContactForm /> -->
       </div>
     </div>
   </div>

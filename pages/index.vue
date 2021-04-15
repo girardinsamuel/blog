@@ -3,10 +3,10 @@
     class="container mx-auto"
   >
     <div
-      class="w-full lg:pt-8 lg:pb-4 border-gray-800"
+      class="w-full lg:pt-8 lg:pb-4"
     >
-      <div class="flex flex-wrap justify-center">
-        <div class="w-full sm:w-1/2 xl:w-1/3 mb-10 sm:mb-0 mr-0 sm:mr-4">
+      <div class="grid grid-cols-6 gap-6">
+        <div class="col-span-full sm:col-span-4">
           <h2 class="text-gray-400 text-3xl mb-6">
             Last posts
           </h2>
@@ -16,13 +16,13 @@
             </li>
           </ul>
         </div>
-        <div class="w-full sm:w-1/2 xl:w-1/3">
+        <div class="col-span-full sm:col-span-2">
           <h2 class="text-gray-400 text-3xl mb-6">
             Actively contributing
           </h2>
           <ul class="space-y-6">
-            <li v-for="article of articles" :key="article.slug">
-              <post-card :article="article" />
+            <li v-for="lastContrib of lastContributions" :key="lastContrib.title">
+              <project-card :project="lastContrib" />
             </li>
           </ul>
         </div>
@@ -32,21 +32,30 @@
 </template>
 
 <script>
+import projects from '@/assets/data/projects.json'
+import contributions from '@/assets/data/contributions.json'
+
 export default {
   async asyncData ({ $content, params }) {
     // fetch latest articles
     const articles = await $content('articles', params.slug)
-      .only(['title', 'description', 'slug'])
-      .sortBy('createdAt', 'asc')
+      .only(['title', 'description', 'slug', 'createdAt'])
+      .sortBy('createdAt', 'desc')
+      .limit(3)
       .fetch()
-    // TODO: fetch latest projects
     return {
       articles
     }
   },
   data () {
     return {
-      activeProjects: ['masonite-admin', 'masonite-inertia', 'masonite4']
+      activeProjects: ['masonite-admin', 'masonite-inertia', 'masonite', 'masonite-orm']
+    }
+  },
+  computed: {
+    lastContributions () {
+      const allContributions = projects.concat(contributions)
+      return allContributions.filter(c => this.activeProjects.includes(c.title))
     }
   },
   head () {

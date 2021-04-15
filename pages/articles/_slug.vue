@@ -1,11 +1,19 @@
 <template>
   <article>
     <h1 class="text-4xl mb-8">
-      {{ article.title }}
+      # {{ article.title }}
     </h1>
 
-    <nuxt-content :document="article" class="prose prose-md lg:prose-lg" />
+    <nuxt-content :document="article" class="prose prose-sm md:prose-md lg:prose-lg" />
 
+    <div class="flex justify-between text-gray-600 text-sm mt-4">
+      <div class="ml-2 flex items-center space-x-2">
+        <badge v-for="tag in article.tags.split(',')" :key="tag">
+          {{ tag }}
+        </badge>
+      </div>
+      <span>Written by Samuel, {{ article.createdAt |formatDate }}</span>
+    </div>
     <div class="flex justify-between items-center mt-16">
       <NuxtLink
         v-if="prev"
@@ -25,12 +33,12 @@
     </div>
 
     <div v-if="similars.length > 0" class="w-2/5 mx-auto mt-8">
-      <h2 class="text-gray-400 text-3xl mb-6">
-        Other in {{ article.tags }}
+      <h2 class="text-gray-400 text-2xl mb-6">
+        Other posts in <strong class="font-semibold">{{ article.tags }}</strong> category
       </h2>
-      <ul>
+      <ul class="space-y-6">
         <li v-for="similar of similars" :key="similar.slug">
-          <post-card class="mb-2" :article="similar" />
+          <post-card :article="similar" />
         </li>
       </ul>
     </div>
@@ -51,7 +59,7 @@ export default {
 
     const similars = await $content('articles')
       .where({ tags: { $contains: article.tags }, slug: { $ne: params.slug } })
-      .only(['title', 'slug'])
+      .only(['title', 'slug', 'createdAt', 'description'])
       .limit(5)
       .sortBy('date', 'desc')
       .fetch()

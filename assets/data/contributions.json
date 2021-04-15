@@ -1,8 +1,13 @@
 [
   {
-    "title": "masonite / masonite 4",
+    "title": "masonite",
     "url": "https://github.com/MasoniteFramework/masonite/",
     "description": "The Modern And Developer Centric Python Web Framework."
+  },
+  {
+    "title": "masonite4",
+    "url": "https://github.com/MasoniteFramework/masonite4/",
+    "description": "Rewrite of MasoniteFramework for next major release 4."
   },
   {
     "title": "masonite-orm",
