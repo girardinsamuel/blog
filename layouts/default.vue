@@ -1,69 +1,26 @@
 <template>
-  <div class="pt-16 text-gray-300 bg-gray-900 leading-normal h-screen flex flex-col">
-    <AppHeader />
-    <main class="mx-auto px-4 pt-10 lg:px-8 bg-gray-900 flex-grow">
-      <div class="flex flex-wrap relative">
-        <Nuxt class="w-full" />
-      </div>
+  <!-- <div class="flex flex-col h-screen font-mono bg-white dark:bg-gray-900"> -->
+  <div class="flex flex-col h-screen font-mono bg-gray-900">
+    <MainHeader />
+    <main class="container mx-auto px-4 py-20 lg:px-8 bg-gray-900 flex-grow mt-10">
+      <Nuxt class="max-w-screen-lg xl:max-w-screen-xl mx-auto" />
     </main>
-
-    <AppFooter />
+    <Footer class="flex-shrink-0" />
   </div>
 </template>
 
-<style>
-html {
-  font-family:
-    'Source Sans Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
-  font-size: 16px;
-  word-spacing: 1px;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
+<script>
+export default {
+  mounted () {
+    if (process.browser) {
+      if (window.localStorage.theme === 'dark' || (!('theme' in window.localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark')
+        window.localStorage.theme = 'dark'
+      } else {
+        document.documentElement.classList.remove('dark')
+        window.localStorage.theme = 'light'
+      }
+    }
+  }
 }
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-}
-
-.button--green {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #3b8070;
-  color: #3b8070;
-  text-decoration: none;
-  padding: 10px 30px;
-}
-
-.button--green:hover {
-  color: #fff;
-  background-color: #3b8070;
-}
-
-.button--grey {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #35495e;
-  color: #35495e;
-  text-decoration: none;
-  padding: 10px 30px;
-  margin-left: 15px;
-}
-
-.button--grey:hover {
-  color: #fff;
-  background-color: #35495e;
-}
-</style>
+</script>

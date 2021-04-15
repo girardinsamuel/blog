@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full relative flex flex-col justify-between">
+  <div class="w-full relative flex flex-col justify-between text-gray-400">
     <div
       class="w-full relative"
       @keydown.down="increment"
@@ -15,7 +15,7 @@
           id="search"
           ref="search"
           v-model="q"
-          class="block w-full pl-10 pr-3 py-2 truncate leading-5 placeholder-gray-500 border border-transparent text-white focus:text-white focus:border-gray-300 dark-focus:border-gray-700 rounded-md focus:outline-none focus:bg-gray-900 bg-gray-800"
+          class="block w-full pl-10 pr-3 py-2 truncate leading-5 placeholder-gray-500 border border-transparent text-white focus:text-white focus:border-yellow-600 dark-focus:border-gray-700 rounded-md focus:outline-none bg-gray-800"
           :class="{ 'rounded-b-none': focus && (searching || results.length) }"
           placeholder="Search for an article"
           type="search"
@@ -41,14 +41,14 @@
         @mousedown="go"
       >
         <NuxtLink
-          :to="{ name: 'recipes-slug', params: { slug: result.slug } }"
+          :to="{ name: 'articles-slug', params: { slug: result.slug } }"
           class="flex px-4 py-2 items-center leading-5 transition ease-in-out duration-150"
           :class="{
-            'text-primary-500 bg-gray-800': focusIndex === index
+            'text-white bg-gray-800': focusIndex === index
           }"
           @click="focus = false"
         >
-          <span class="text-primary-500">{{ result.base ? '[Technique]' : '[Recette]' }} </span>&nbsp;{{ result.title }}
+          {{ result.title }}
         </NuxtLink>
       </li>
     </ul>
@@ -76,7 +76,7 @@ export default {
         return
       }
       this.searching = true
-      this.results = await this.$content('recipes', { deep: true }).sortBy('position', 'asc').only(['title', 'slug', 'base']).limit(12).search(q).fetch()
+      this.results = await this.$content('articles', { deep: true }).sortBy('position', 'asc').only(['title', 'slug', 'base']).limit(12).search(q).fetch()
       this.searching = false
     }
   },
@@ -115,7 +115,7 @@ export default {
         return
       }
       const result = this.focusIndex === -1 ? this.results[0] : this.results[this.focusIndex]
-      this.$router.push({ name: 'recipes-slug', params: { slug: result.slug } })
+      this.$router.push({ name: 'articles-slug', params: { slug: result.slug } })
       // Unfocus the input and reset the query.
       this.$refs.search.blur()
       this.q = ''

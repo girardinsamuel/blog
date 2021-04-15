@@ -12,15 +12,18 @@
   },
   "dependencies": {
     "@nuxt/content": "^1.9.0",
+    "@tailwindcss/typography": "^0.3.1",
     "core-js": "^3.6.5",
     "marked": "^1.2.7",
     "nuxt": "^2.14.6",
+    "prism-themes": "^1.5.0",
     "vue-clipboard2": "^0.3.1"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^3.1.0",
     "@nuxtjs/eslint-module": "^2.0.0",
-    "@nuxtjs/tailwindcss": "^3.1.0",
+    "@nuxtjs/google-fonts": "^1.2.0",
+    "@nuxtjs/tailwindcss": "^3.4.2",
     "babel-eslint": "^10.1.0",
     "eslint": "^7.10.0",
     "eslint-plugin-nuxt": "^1.0.0"

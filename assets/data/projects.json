@@ -1,0 +1,17 @@
+[
+  {
+    "title": "masonite-inertia",
+    "url": "https://github.com/girardinsamuel/masonite-inertia/",
+    "description": "A server-side MasoniteFramework adapter for Inertia.js."
+  },
+  {
+    "title": "masonite-js-routes",
+    "url": "https://github.com/girardinsamuel/masonite-js-routes/",
+    "description": "Get access to your MasoniteFramework routes client-side ! Compatible with Ziggy.js"
+  },
+  {
+    "title": "masonite-admin",
+    "url": "",
+    "description": "An administration dashboard for MasoniteFramework 4."
+  }
+]

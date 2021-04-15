@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* h1 {
+    @apply text-2xl;
+  }
+  h2 {
+    @apply text-xl;
+  } */
+  body {
+    @apply bg-gray-900 text-gray-300;
+  }
+}
+
+nav .nav-link.nuxt-link-active {
+  @apply bg-black text-white;
+}
+
+.nuxt-content {
+  & .nuxt-content-highlight {
+    @apply relative;
+
+    /* Style filename span added by @nuxt/content */
+    & > .filename {
+      @apply absolute right-0 top-0 text-gray-100 z-10 font-mono text-sm tracking-tight leading-none mr-4 mt-3;
+    }
+
+    /* Add top padding to code blocks with filename */
+    & > .filename + pre[class*="language-"] {
+      @apply pt-8;
+    }
+
+    /* Style copy button added in `pages/_.vue` */
+    & > .copy {
+      @apply hidden absolute right-0 bottom-0 leading-none shadow-lg px-2 py-2 text-white bg-gray-800 text-sm uppercase rounded-md border border-white font-semibold mr-3 mb-3;
+
+      &:hover {
+        @apply bg-gray-700;
+      }
+
+      &:focus {
+        @apply outline-none bg-gray-600;
+      }
+    }
+    &:hover {
+      & > .copy {
+        @apply block;
+      }
+    }
+  }
+
+  /* Force style on pre elements */
+  & pre[class*="language-"] {
+    /* Make pre static so the relative goes to the parent (.nuxt-content-highlight) */
+    @apply bg-gray-800 static;
+  }
+}
+
+.link {
+  @apply text-yellow-500 underline;
+}
+.link:hover {
+  @apply text-yellow-600;
+}

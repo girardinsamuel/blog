@@ -1,0 +1,17 @@
+[
+  {
+    "title": "masonite / masonite 4",
+    "url": "https://github.com/MasoniteFramework/masonite/",
+    "description": "The Modern And Developer Centric Python Web Framework."
+  },
+  {
+    "title": "masonite-orm",
+    "url": "https://github.com/MasoniteFramework/orm/",
+    "description": "Masonite ORM"
+  },
+  {
+    "title": "masonite-validation",
+    "url": "https://github.com/MasoniteFramework/validation/",
+    "description": "Python validation package for Masonite."
+  }
+]

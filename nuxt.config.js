@@ -43,12 +43,37 @@ export default {
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
     // https://go.nuxtjs.dev/content
-    '@nuxt/content'
+    '@nuxt/content',
+    '@nuxtjs/google-fonts'
   ],
-
+  googleFonts: {
+    families: {
+      'Roboto Mono': ['300', '400', '500', '600', '700']
+    },
+    display: 'swap',
+    prefetch: true,
+    preload: true
+  },
   // Content module configuration (https://go.nuxtjs.dev/config-content)
-  content: {},
+  content: {
+    markdown: {
+      prism: {
+        // theme: 'prism-themes/themes/prism-coldark-dark.css'
+        // theme: 'prism-themes/themes/prism-shades-of-purple.css'
+        theme: 'prism-themes/themes/prism-material-oceanic.css'
+      }
+    }
+  },
 
+  router: {
+    // extendRoutes (routes, resolve) {
+    //   routes.push({
+    //     name: 'custom',
+    //     path: '*',
+    //     component: resolve(__dirname, 'pages/404.vue')
+    //   })
+    // }
+  },
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
   }
